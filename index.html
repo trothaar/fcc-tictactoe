@@ -1,0 +1,99 @@
+<!--
+ Teresa Rothaar
+ Free Code Camp Challenge #295
+ Build a Tic Tac Toe Game
+
+ Game should be funtionally similar to
+ https://codepen.io/FreeCodeCamp/full/KzXQgy/
+
+ It needs to satisfy the following user stories:
+
+ User Story: I can play a game of Tic Tac Toe with the computer.
+
+ User Story: My game will reset as soon as it's over so I can play again.
+
+ User Story: I can choose whether I want to play as X or O.
+
+ Much thanks to Dylan Israel at Coding360 for his great tutorial!
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Free Code Camp Tic Tac Toe Game</title>
+  <meta charset="utf-8">
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="pomodoro.css">
+
+<!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Font Awesome -->
+<script src="https://use.fontawesome.com/16f8eaceda.js"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+</head>
+<body>
+
+<div class = "container text-center">
+<!-- Turn X and Turn O options -->
+<a class = "btn btn-primary" id="turnX">Turn X</a>
+<a class = "btn btn-primary" id="turnO">Turn O</a>
+
+<!-- First Row of Squares -->
+<div class = "row">
+<div class = "col-md-6">
+  <a class = "btn btn-primary tic" id="0">#</a>
+  <a class = "btn btn-primary tic" id="1">#</a>
+  <a class = "btn btn-primary tic" id="2">#</a>
+</div></div>
+
+<!-- Second Row of Squares -->
+<div class = "row">
+<div class = "col-md-6">
+  <a class = "btn btn-primary tic" id="3">#</a>
+  <a class = "btn btn-primary tic" id="4">#</a>
+  <a class = "btn btn-primary tic" id="5">#</a>
+</div></div>
+
+<!-- Third Row of Squares -->
+<div class = "row">
+<div class = "col-md-6">
+  <a class = "btn btn-primary tic" id="6">#</a>
+  <a class = "btn btn-primary tic" id="7">#</a>
+  <a class = "btn btn-primary tic" id="8">#</a>
+</div></div>
+
+</div>
+
+</div>
+
+<!-- Javascript -->
+<script src="tictactoe.js"></script>
+
+ <div class="container-fluid text-center" id="footer">
+  <p>By Teresa Rothaar</p>
+    <a href="mailto:trothaarwork@gmail.com">
+      <i class="fa fa-envelope fa-fw"></i>
+    </a>
+    <a href="https://github.com/trothaar" target='_blank'>
+      <i class="fa fa-github fa-fw"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/teresarothaar" target='_blank'>
+      <i class="fa fa-linkedin"></i>
+    </a>
+    <a href="http://www.freecodecamp.com/trothaar" target='_blank'>
+  (<i class="fa fa-fire fa-fw"></i>)
+</a>
+</div>
+</body>
+</html>
