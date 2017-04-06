@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+reset();
 // Default human player is X; default computer player is O
 var turn = "X";
 var computerTurn = "O";
@@ -10,7 +10,28 @@ var gameOn = false;
 // Keeps track of computer's turn to prevent indefinite loop
 var count = 0;
 
-// Used to break while loop
+// Populate board with X's and O's
+$(".tic").click(function(){
+  var slot = $(this).attr("id");
+  playerTurn(turn, slot);
+});
+
+// Human plays
+function playerTurn(turn, id){
+  var spotTaken = $("#" + id).text(); // concatenate the hashtag with the appropriate ID# being passed in
+  if(spotTaken === "#"){
+    count ++;
+    turns[id] = turn;
+    $("#" + id).text(turn);
+    winCondition(turns, turn);
+    if(gameOn===false){
+      computerTurnFn();
+      winCondition(turns, computerTurn);
+    }
+  }
+}
+
+// Computer Plays
 function computerTurnFn(){
   var taken = false;
   while(taken === false && count != 5){
@@ -42,20 +63,6 @@ $("#turnO").click(function(){
   $("#turnO").addClass("btn-primary");
   reset();
 });
-
-function playerTurn(turn, id){
-  var spotTaken = $("#" + id).text(); // concatenate the hashtag with the appropriate ID# being pased in
-  if(spotTaken === "#"){
-    count ++;
-    turns[id] = turn;
-    $("#" + id).text(turn);
-    winCondition(turns, turn);
-    if(gameOn===false){
-      computerTurnFn();
-      winCondition(turns, computerTurn);
-    }
-  }
-}
 
 function winCondition(turnArray, currentTurn){
   // Case 1: All spots in top row
@@ -109,13 +116,8 @@ function winCondition(turnArray, currentTurn){
 }
 }
 
-// Populate board with X's and O's
-$(".tic").click(function(){
-  var slot = $(this).attr("id");
-  playerTurn(turn, slot);
-});
-
 function reset(){
+  console.log("Resetting ...");
   var turns = ["#", "#", "#", "#", "#", "#", "#", "#", "#"]; // Reset array
   var count = 0;
   $(".tic").text("#");
