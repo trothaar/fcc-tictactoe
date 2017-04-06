@@ -98,6 +98,11 @@ function winCondition(turnArray, currentTurn){
       gameOn = true;
       reset();
       alert("Player " + currentTurn + " wins!");
+// Case 9: No spots left but no winner; draw
+}else if(!(turnArray.includes("#"))){
+  gameOn = true;
+  reset();
+  alert("Match draw - try again.");
  // Default
 }else{
   gameOn = false;
